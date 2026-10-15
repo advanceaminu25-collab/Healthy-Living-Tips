@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalityLife | Healthy Living & Wellness Tips</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        :root { --primary-green: #2e7d32; --light-green: #e8f5e9; --accent-green: #4caf50; --dark-text: #2c3e50; --light-bg: #f9fbf9; --white: #ffffff; }
+        body { background-color: var(--light-bg); color: var(--dark-text); line-height: 1.6; }
+        
+        header { background: var(--white); box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-green); text-decoration: none; }
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links li { position: relative; }
+        .nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 500; padding: 0.5rem 0; display: block; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-green); }
+        
+        .submenu { position: absolute; top: 100%; left: 0; background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.1); list-style: none; min-width: 220px; border-radius: 6px; display: none; padding: 0.5rem 0; z-index: 100; }
+        .nav-links li:hover .submenu { display: block; }
+        .submenu li a { padding: 0.5rem 1rem; font-size: 0.9rem; color: var(--dark-text); }
+        .submenu li a:hover { background-color: var(--light-green); color: var(--primary-green); }
+
+        .hero { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: var(--white); padding: 7rem 2rem; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn { background-color: var(--accent-green); color: var(--white); padding: 0.8rem 2rem; border: none; border-radius: 30px; font-size: 1rem; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.3s; }
+        .btn:hover { background-color: var(--primary-green); }
+
+        .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary-green); margin-bottom: 0.5rem; }
+        
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: inherit; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 1.5rem; }
+        .card-content h3 { margin-bottom: 0.8rem; color: var(--primary-green); }
+        .card-content p { color: #666; font-size: 0.95rem; margin-bottom: 1.2rem; }
+        .card-link { color: var(--primary-green); font-weight: bold; }
+
+        .contact-section { background: var(--white); border-radius: 12px; padding: 3rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-info h3 { color: var(--primary-green); font-size: 1.8rem; margin-bottom: 1rem; }
+        .contact-info p { color: #555; margin-bottom: 1.5rem; }
+        .contact-details { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+        .contact-details li span { color: var(--primary-green); font-weight: bold; }
+        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-form input, .contact-form textarea { padding: 0.9rem; border: 1px solid #d0e1d4; border-radius: 6px; font-size: 1rem; outline: none; }
+        .contact-form textarea { resize: vertical; height: 120px; }
+
+        footer { background-color: #1b381e; color: var(--white); text-align: center; padding: 2.5rem 2rem; margin-top: 4rem; }
+        footer p { opacity: 0.8; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌿 VitalityLife</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="nutrition.html">Nutrition ▾</a>
+                    <ul class="submenu">
+                        <li><a href="nutrition.html#superfoods">Antioxidant Superfoods</a></li>
+                        <li><a href="nutrition.html#mealprep">Clean Meal Prep Guide</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="fitness.html">Fitness ▾</a>
+                    <ul class="submenu">
+                        <li><a href="fitness.html#walking">Daily Walking Routine</a></li>
+                        <li><a href="fitness.html#strength">Strength Fundamentals</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mind.html">Mind & Body ▾</a>
+                    <ul class="submenu">
+                        <li><a href="mind.html#stress">Stress Management</a></li>
+                        <li><a href="mind.html#sleep">Sleep Hygiene Tips</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Embrace a Healthier, Happier Lifestyle Today</h1>
+        <p>Explore deep branch pages filled with science-backed wellness advice, guides, and everyday health habits.</p>
+        <a href="#explore" class="btn">Explore Branches</a>
+    </section>
+
+    <main class="container" id="explore">
+        <div class="section-title">
+            <h2>Core Wellness Hubs</h2>
+            <p>Click any category card below to open its dedicated branch page.</p>
+        </div>
+
+        <div class="grid-cards">
+            <a href="nutrition.html" class="card">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80" alt="Nutrition">
+                <div class="card-content">
+                    <h3>Wholesome Nutrition Hub &rarr;</h3>
+                    <p>Explore dedicated sub-pages on antioxidant superfoods, clean meal planning, and balanced eating habits.</p>
+                    <span class="card-link">Open Branch Page</span>
+                </div>
+            </a>
+
+            <a href="fitness.html" class="card">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Fitness">
+                <div class="card-content">
+                    <h3>Active Movement Hub &rarr;</h3>
+                    <p>Access structured branch guides covering consistency, daily walking routines, and beginner-friendly strength.</p>
+                    <span class="card-link">Open Branch Page</span>
+                </div>
+            </a>
+
+            <a href="mind.html" class="card">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Mind">
+                <div class="card-content">
+                    <h3>Mind & Body Hub &rarr;</h3>
+                    <p>Read deep guides detailing practical breathing techniques, stress reduction, and optimal deep sleep routines.</p>
+                    <span class="card-link">Open Branch Page</span>
+                </div>
+            </a>
+        </div>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-info">
+                <h3>Get in Touch with Us</h3>
+                <p>Have inquiries or want to connect with our health coordination team? Contact us using the details below.</p>
+                <ul class="contact-details">
+                    <li>📧 Email: <span>advanceaminu25@gmail.com</span></li>
+                    <li>📞 Phone: <span>09059784234</span></li>
+                    <li>📍 Location: Wellness & Health Hub</li>
+                </ul>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will get back to you shortly.');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message..." required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VitalityLife. Promoting a balanced green lifestyle. All rights reserved.</p>
+    </footer>
+</body>
+</html>
